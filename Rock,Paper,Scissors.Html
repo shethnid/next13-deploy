@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    </body>
+    
+    <style>
+    
+        body {
+            font-family: 'Creepster', cursive;
+            background-color: #000;
+            background-image: url('https://wallpapers.com/images/hd/scary-halloween-skeleton-crawling-rapa26ebjghodblv.jpg');
+            background-size: cover;
+            background-position: center;
+            color: #e10000;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #f1071a;
+            font-size: 3em;
+            text-shadow: 2px 2px #000;
+            margin-top: 50px;
+        }
+        p {
+            color: #bb0808;
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+        .choices {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .choice {
+            border: 2px solid #ff7518;
+            padding: 20px;
+            margin: 10px;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.2s;
+            background-color: rgba(255, 117, 24, 0.1);
+            color: #ba0707;
+            font-size: 1.5em;
+            border-radius: 10px;
+            background-attachment:"30 Minute Halloween Horror Song_Hip-Hop Beat - A Creepy and Dark Sound Track (Free MP3 Download).mp3";
+        }
+        .choice:hover {
+            transform: scale(1.1);
+            background-color: #ff7518;
+        }
+        .result {
+            margin-top: 20px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            cursor: pointer;
+            background-color: #ff7518;
+            border: none;
+            color: white;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff5733;
+        }
+        footer {
+            margin-top: 50px;
+            font-size: 18px;
+            color: red;
+            text-align: center;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>Rock, Paper, Scissors - Halloween Edition 👻</h1>
+    <p>Choose your spooky move:</p>
+
+    <div class="choices">
+        <div class="choice" onclick="playGame('rock')">🪨 Rock</div>
+        <div class="choice" onclick="playGame('paper')">📄 Paper</div>
+        <div class="choice" onclick="playGame('scissors')">✂️ Scissors</div>
+    </div>
+
+    <div id="result" class="result"></div>
+
+    <button onclick="resetGame()">Play Again</button>
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title></title>
+    </head>
+    <body>
+    
+    </html>
+    
+    
+
+    <footer>
+        
+        <p>Created by <strong>Nidhi Sheth</strong></p>
+        <p>&copy; 2024 - All rights reserved</p>
+    
+    </footer>
+
+
+    <script>
+        function playGame(userChoice) {
+            const choices = ['rock', 'paper', 'scissors'];
+            const computerChoice = choices[Math.floor(Math.random() * 3)];
+            const resultDiv = document.getElementById('result');
+
+            let result = '';
+
+            if (userChoice === computerChoice) {
+                result = `It's a tie! You both chose ${userChoice}.`;
+            } else if (
+                (userChoice === 'rock' && computerChoice === 'scissors') ||
+                (userChoice === 'paper' && computerChoice === 'rock') ||
+                (userChoice === 'scissors' && computerChoice === 'paper')
+            ) {
+                result = `You win! ${userChoice} beats ${computerChoice}.`;
+            } else {
+                result = `You lose! ${computerChoice} beats ${userChoice}.`;
+            }
+
+            resultDiv.innerHTML = result;
+        }
+
+        function resetGame() {
+            document.getElementById('result').innerHTML = '';
+        }
+    </script>
+
+</body>
+</html>
